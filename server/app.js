@@ -3,14 +3,12 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const app = express();
 const { sequelize } = require("./models");
-const adminRoutes = require("./src/routes/adminRoutes");
+const adminRoutes = require("./src/routes/admin.routes");
 
-const corsOptions = {
-  origin: "http://localhost:3000",
-};
+
 
 app.use(bodyParser.json());
-app.use(cors(corsOptions));
+
 
 app.use("/api/admin", adminRoutes);
 
